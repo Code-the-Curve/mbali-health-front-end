@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import ChatNavbar from './ChatNavbar';
+import ChatNavbar from '../../molecules/ChatNavbar';
 import MessageInput from './MessageInput';
 import MessagesList from './MessagesList';
 
@@ -15,7 +15,7 @@ const Container = styled.div`
 const ChatRoomMessages = () => {
   return (
     <Container>
-      <ChatNavbar chat={chat} history={history} />
+      <ChatNavbar />
       <MessagesList />
       <MessageInput />
     </Container>
