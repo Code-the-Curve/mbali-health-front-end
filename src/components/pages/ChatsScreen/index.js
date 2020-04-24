@@ -1,20 +1,15 @@
 import React from 'react';
-import styled from 'styled-components';
 
-import NavBar from '../../molecules/NavBar';
-import NewChatButton from '../../molecules/NewChatButton';
 import ChatListItems from '../../organisms/ChatListItems'
 
-const Main = styled.div`
-  height: 100vh;
-`;
+import DefaultLayout from '../../templates/DefaultLayout';
 
 const ChatsScreen = () => (
-  <Main>
-    <NavBar />
-    <ChatListItems />
-    <NewChatButton />
-  </Main>
+
+  <DefaultLayout>
+    <ChatListItems/>
+  </DefaultLayout>
+
 );
 
 export default ChatsScreen;

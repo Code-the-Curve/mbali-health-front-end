@@ -1,29 +1,15 @@
 import React from 'react';
-import styled from 'styled-components';
+import DefaultLayout from '../../templates/DefaultLayout';
 
 import ChatNavbar from '../../molecules/ChatNavbar';
 import MessageInput from '../../molecules/MessageInput';
 import MessagesList from '../../organisms/MessagesList';
 
-const Container = styled.div`
-  background: url(/assets/chat-background.jpg);
-  display: flex;
-  flex-flow: column;
-  height: 100vh;
-`;
-
-const ChatRoomMessages = () => {
-  return (
-    <Container>
-      <ChatNavbar />
-      <MessagesList />
-      <MessageInput />
-    </Container>
-  );
-};
-
-const ChatRoom = () => {
-  return <ChatRoomMessages />;
-};
-
+const ChatRoom = () => (
+  <DefaultLayout>
+    <ChatNavbar/>
+    <MessagesList/>
+    <MessageInput/>
+  </DefaultLayout>
+);
 export default ChatRoom;

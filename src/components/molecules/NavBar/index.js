@@ -1,38 +1,54 @@
-import React from 'react';
-import { Toolbar } from '@material-ui/core';
-import styled from 'styled-components';
-import SignOutIcon from '@material-ui/icons/PowerSettingsNew';
-
-import Button from '../../atoms/Button';
-import Heading from '../../atoms/Heading';
-import Link from '../../atoms/Link';
-
-const NavBarContainer = styled(Toolbar)`
-  display: flex;
-  background-color: #2c6157;
-  color: white;
-  font-size: 20px;
-  line-height: 40px;
-`;
-
-const StyledHeading = styled(Heading)`
-  flex: 1;
-`;
-
-const StyledButton = styled(Button)`
-  color: white;
-`;
+import React, { useState } from 'react';
+import {
+  Collapse,
+  Navbar,
+  NavbarToggler,
+  NavbarBrand,
+  Nav,
+  NavItem,
+  NavLink,
+  UncontrolledDropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem
+} from 'reactstrap';
 
 const NavBar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggle = () => setIsOpen(!isOpen);
   return (
-    <NavBarContainer>
-      <StyledHeading level={4}>WhatsApp Web</StyledHeading>
-      <Link to="/sign-in">
-        <StyledButton onClick={() => console.log('sign out button clicked')}>
-          <SignOutIcon />
-        </StyledButton>
-      </Link>
-    </NavBarContainer>
+    <Navbar color="dark" dark expand="md">
+    <NavbarBrand href="/">Mbali Health</NavbarBrand>
+    <NavbarToggler onClick={toggle} />
+    <Collapse isOpen={isOpen} navbar >
+      <Nav className="ml-auto" navbar >
+        <NavItem>
+          <NavLink href="/">Settings</NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink href="/">Notifications</NavLink>
+        </NavItem>
+        <UncontrolledDropdown nav inNavbar>
+          <DropdownToggle nav caret>
+            John Smith
+          </DropdownToggle>
+          <DropdownMenu right>
+            <DropdownItem>
+              Option 1
+            </DropdownItem>
+            <DropdownItem>
+              Option 2
+            </DropdownItem>
+            <DropdownItem divider />
+            <DropdownItem>
+              Reset
+            </DropdownItem>
+          </DropdownMenu>
+        </UncontrolledDropdown>
+      </Nav>
+    </Collapse>
+  </Navbar>
   );
 };
 
