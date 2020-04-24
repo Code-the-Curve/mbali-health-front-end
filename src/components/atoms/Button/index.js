@@ -1,4 +1,3 @@
-import React from 'react';
 import MaterialButton from '@material-ui/core/Button';
 import styled from 'styled-components';
 

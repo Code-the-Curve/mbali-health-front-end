@@ -9,6 +9,9 @@ import Icon from '../../atoms/Icon';
 import SignInForm from '../../organisms/SIgnInForm';
 import SignUpForm from '../../organisms/SignUpForm';
 
+
+// TODO: Work on sign in/up switch logic
+
 const AuthPage = styled.div`
   background: radial-gradient(rgb(34, 65, 67), rgb(17, 48, 50)),
     url(/assets/chat-background.jpg) no-repeat;

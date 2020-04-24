@@ -1,5 +1,5 @@
 import React, { lazy, Suspense } from 'react';
-import { Switch, Route, Redirect } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 
 // import CustomSwitch from '../../utils/customSwitch';
 import LoadingPage from '../pages/LoadingPage';
@@ -7,9 +7,9 @@ import LoadingPage from '../pages/LoadingPage';
 const SignInForm = lazy(() =>
   import(/* webpackChunkName: "signInForm" */ '../organisms/SIgnInForm')
 );
-// const LoginPage = lazy(() =>
-//   import(/* webpackChunkName: "loginPage" */ '../pages/LoginPage')
-// );
+const SignUpForm = lazy(() =>
+  import(/* webpackChunkName: "signUpForm" */ '../organisms/SignUpForm')
+);
 const ChatsScreen = lazy(() =>
   import(/* webpackChunkName: "chatsScreen" */ '../pages/ChatsScreen')
 );
@@ -27,9 +27,14 @@ const AppRoutes = () => (
         <ChatsScreen />
       </Suspense>
     </Route>
-    <Route path="/login" exact>
+    <Route path="/sign-in" exact>
       <Suspense fallback={<LoadingPage />}>
         <SignInForm />
+      </Suspense>
+    </Route>
+    <Route path="/sign-up" exact>
+      <Suspense fallback={<LoadingPage />}>
+        <SignUpForm />
       </Suspense>
     </Route>
     <Route path="/chats" exact>
