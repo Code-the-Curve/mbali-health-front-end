@@ -24,7 +24,7 @@ const AppRoutes = () => (
         <ChatsScreen />
       </Suspense>
     </Route>
-    <Route path="/sign-in" exact>
+    <Route path="/sign-(in|up)" exact>
       <Suspense fallback={<LoadingPage />}>
         <LoginPage />
       </Suspense>
