@@ -97,7 +97,7 @@ const SignInForm = () => {
               variant="contained"
               onClick={() => console.log('sign in button clicked')}
             >
-              Sign in
+              Sign In
             </Button>
           </Link>
           <ErrorMessage>{error}</ErrorMessage>
