@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import ChatNavbar from '../../molecules/ChatNavbar';
 import MessageInput from '../../molecules/MessageInput';
-import MessagesList from '../../molecules/MessagesList';
+import MessagesList from '../../organisms/MessagesList';
 
 const Container = styled.div`
   background: url(/assets/chat-background.jpg);
