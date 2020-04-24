@@ -2,8 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 
 import ChatNavbar from '../../molecules/ChatNavbar';
-import MessageInput from './MessageInput';
-import MessagesList from './MessagesList';
+import MessageInput from '../../molecules/MessageInput';
+import MessagesList from '../../molecules/MessagesList';
 
 const Container = styled.div`
   background: url(/assets/chat-background.jpg);
