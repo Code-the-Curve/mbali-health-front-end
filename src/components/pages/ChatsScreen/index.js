@@ -1,10 +1,8 @@
-import React, {Fragment} from 'react';
+import React from 'react';
 
-import NewChatButton from '../../molecules/NewChatButton';
 import ChatListItems from '../../organisms/ChatListItems'
 
-import {Row, Container, Col} from 'reactstrap';
-import DefaultLayout from '../../molecules/Layout/DefaultLayout';
+import DefaultLayout from '../../templates/DefaultLayout';
 
 const ChatsScreen = () => (
 

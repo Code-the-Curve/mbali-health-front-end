@@ -19,7 +19,7 @@ const NavBar = () => {
   const toggle = () => setIsOpen(!isOpen);
   return (
     <Navbar color="dark" dark expand="md">
-    <NavbarBrand href="/">Ilara Health Medical Clinic</NavbarBrand>
+    <NavbarBrand href="/">Mbali Health</NavbarBrand>
     <NavbarToggler onClick={toggle} />
     <Collapse isOpen={isOpen} navbar >
       <Nav className="ml-auto" navbar >
