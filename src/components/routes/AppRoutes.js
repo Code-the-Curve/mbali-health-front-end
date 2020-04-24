@@ -4,9 +4,12 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 // import CustomSwitch from '../../utils/customSwitch';
 import LoadingPage from '../pages/LoadingPage';
 
-const LoginPage = lazy(() =>
-  import(/* webpackChunkName: "loginPage" */ '../pages/LoginPage')
+const SignInForm = lazy(() =>
+  import(/* webpackChunkName: "signInForm" */ '../organisms/SIgnInForm')
 );
+// const LoginPage = lazy(() =>
+//   import(/* webpackChunkName: "loginPage" */ '../pages/LoginPage')
+// );
 const ChatsScreen = lazy(() =>
   import(/* webpackChunkName: "chatsScreen" */ '../pages/ChatsScreen')
 );
@@ -24,9 +27,9 @@ const AppRoutes = () => (
         <ChatsScreen />
       </Suspense>
     </Route>
-    <Route path="/sign-in" exact>
+    <Route path="/login" exact>
       <Suspense fallback={<LoadingPage />}>
-        <LoginPage />
+        <SignInForm />
       </Suspense>
     </Route>
     <Route path="/chats" exact>
