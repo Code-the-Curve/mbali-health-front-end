@@ -48,6 +48,16 @@ const Section = styled.div`
   padding-bottom: 35px;
   width: 100%;
 `;
+const SwitchRoute = styled.div`
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+
+  label {
+    color: #6fd056;
+    cursor: pointer;
+  }
+`;
 
 const SignUpForm = () => {
   const [name, setName] = useState('');
@@ -129,6 +139,12 @@ const SignUpForm = () => {
           </Link>
           <ErrorMessage>{error}</ErrorMessage>
         </FormBody>
+        <SwitchRoute>
+          Already have an account?{' '}
+          <Link to="/sign-in">
+            <label onClick={() => console.log('go to sign in')}>Sign in!</label>
+          </Link>
+        </SwitchRoute>
       </SignForm>
     </AuthPage>
   );
