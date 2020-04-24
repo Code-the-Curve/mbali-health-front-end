@@ -43,6 +43,7 @@ const StyledHeading = styled(Heading)`
 `;
 
 const LoginPage = ({ history, location }) => {
+  console.log('location', location);
   const switchRoute = useMemo(() => {
     if (location && location.pathname === '/sign-in') {
       const signUpUser = () => {
@@ -71,13 +72,14 @@ const LoginPage = ({ history, location }) => {
   return (
     <AuthPage>
       <Header>
-        {/* <StyledIcon icon="whatsapp" /> */}
+        <StyledIcon icon="whatsapp" />
         <StyledHeading level={3}>WhatsApp</StyledHeading>
       </Header>
       <CustomSwitch>
         <Route exact path="/sign-in" component={SignInForm} />
         <Route exact path="/sign-up" component={SignUpForm} />
       </CustomSwitch>
+      {switchRoute}
     </AuthPage>
   );
 };
