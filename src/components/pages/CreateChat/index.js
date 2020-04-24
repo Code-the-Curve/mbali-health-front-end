@@ -1,11 +1,12 @@
 import React from 'react';
-// import UsersList from '../UsersList';
+
 import CreateChatNavbar from '../../molecules/CreateChatNavbar';
+import UsersList from '../../organisms/UsersList';
 
 const CreateChat = () => (
   <>
     <CreateChatNavbar />
-    {/* <UsersList /> */}
+    <UsersList />
   </>
 );
 
