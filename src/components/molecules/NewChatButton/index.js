@@ -22,7 +22,7 @@ const ButtonContainer = styled.div`
 const NewChatButton = () => {
   return (
     <ButtonContainer>
-      <Link to="/new-chat">
+      <Link to="/chats/create-chat">
         <Button
           variant="contained"
           color="secondary"

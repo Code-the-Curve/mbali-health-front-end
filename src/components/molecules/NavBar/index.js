@@ -7,7 +7,7 @@ import Button from '../../atoms/Button';
 import Heading from '../../atoms/Heading';
 import Link from '../../atoms/Link';
 
-const Container = styled(Toolbar)`
+const NavBarContainer = styled(Toolbar)`
   display: flex;
   background-color: #2c6157;
   color: white;
@@ -25,14 +25,14 @@ const StyledButton = styled(Button)`
 
 const NavBar = () => {
   return (
-    <Container>
+    <NavBarContainer>
       <StyledHeading level={4}>WhatsApp Web</StyledHeading>
       <Link to="/sign-in">
         <StyledButton onClick={() => console.log('sign out button clicked')}>
           <SignOutIcon />
         </StyledButton>
       </Link>
-    </Container>
+    </NavBarContainer>
   );
 };
 

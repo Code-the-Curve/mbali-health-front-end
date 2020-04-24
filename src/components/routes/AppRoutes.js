@@ -16,6 +16,9 @@ const ChatsScreen = lazy(() =>
 const ChatRoom = lazy(() =>
   import(/* webpackChunkName: "chatRoom" */ '../pages/ChatRoom')
 );
+const CreateChat = lazy(() =>
+  import(/* webpackChunkName: "createChat" */ '../pages/CreateChat')
+);
 const NotFoundPage = lazy(() =>
   import(/* webpackChunkName: "notFoundPage" */ '../pages/NotFoundPage')
 );
@@ -42,9 +45,14 @@ const AppRoutes = () => (
         <ChatsScreen />
       </Suspense>
     </Route>
-    <Route path="/chats/:chatId" exact>
+    <Route path="/chats/chat-room" exact>
       <Suspense fallback={<LoadingPage />}>
         <ChatRoom />
+      </Suspense>
+    </Route>
+    <Route path="/chats/create-chat" exact>
+      <Suspense fallback={<LoadingPage />}>
+        <CreateChat />
       </Suspense>
     </Route>
     <Route>
