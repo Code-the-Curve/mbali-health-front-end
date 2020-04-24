@@ -1,0 +1,65 @@
+{
+  "parser": "babel-eslint",
+  "extends": [
+    "airbnb",
+    "plugin:react/recommended"
+  ],
+  "env": {
+    "browser": true,
+    "jest": true
+  },
+  "plugins": [
+    "import",
+    "jsx-a11y",
+    "react",
+    "react-hooks"
+  ],
+  "settings": {
+    "import/resolver": {
+      "webpack": {
+        "config": "webpack.config.js"
+      }
+    }
+  },
+  "rules": {
+    "arrow-body-style": 0,
+    "arrow-parens": 0,
+    "comma-dangle": [0, "always-multiline"],
+    "function-paren-newline": 0,
+    "global-require": 0,
+    "implicit-arrow-linebreak": 0,
+    "import/no-dynamic-require": 0,
+    "import/no-extraneous-dependencies": 0,
+    "import/prefer-default-export": 0,
+    "indent": 1,
+    "max-len": 0,
+    "no-confusing-arrow": 0,
+    "no-constant-condition": 0,
+    "no-shadow": 0,
+    "no-unused-expressions": 0,
+    "no-unused-vars": [2, {
+      "ignoreRestSiblings": true
+    }],
+    "operator-linebreak": [0],
+    "object-curly-newline": 0,
+    "react-hooks/rules-of-hooks": "error",
+    "react/default-props-match-prop-types": 0,
+    "react/forbid-prop-types": 0,
+    "react/jsx-curly-newline": 0,
+    "react/jsx-filename-extension": [2, {
+      "extensions": [".js", ".jsx"]
+    }],
+    "react/jsx-one-expression-per-line": 0,
+    "react/jsx-props-no-spreading": 0,
+    "react/jsx-wrap-multilines": 0,
+    "react/no-unused-prop-types": 0,
+    "react/require-default-props": 0,
+    "semi-style": [0, "first"],
+    "semi": [0, "never"],
+    "jsx-a11y/anchor-is-valid": [2, {
+      "components": ["Link"],
+      "specialLink": ["hrefLeft", "hrefRight", "to"],
+      "aspects": ["noHref", "invalidHref", "preferButton"]
+    }]
+  }
+}
