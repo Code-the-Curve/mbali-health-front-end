@@ -26,7 +26,7 @@ const StyledButton = styled(Button)`
 const NavBar = () => {
   return (
     <Container>
-      <StyledHeading>WhatsApp</StyledHeading>
+      <StyledHeading level={4}>WhatsApp Web</StyledHeading>
       <Link to="/sign-in">
         <StyledButton onClick={() => console.log('sign out button clicked')}>
           <SignOutIcon />
