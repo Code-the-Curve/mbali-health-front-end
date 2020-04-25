@@ -10,7 +10,7 @@ import {
   UncontrolledDropdown,
   DropdownToggle,
   DropdownMenu,
-  DropdownItem
+  DropdownItem,
 } from 'reactstrap';
 
 const NavBar = () => {
@@ -19,17 +19,20 @@ const NavBar = () => {
   const toggle = () => setIsOpen(!isOpen);
   return (
     <Navbar color="dark" dark expand="md">
-    <NavbarBrand href="/">Mbali Health</NavbarBrand>
-    <NavbarToggler onClick={toggle} />
-    <Collapse isOpen={isOpen} navbar >
-      <Nav className="ml-auto" navbar >
-        <NavItem>
-          <NavLink href="/">Settings</NavLink>
-        </NavItem>
-        <NavItem>
-          <NavLink href="/">Notifications</NavLink>
-        </NavItem>
-        <UncontrolledDropdown nav inNavbar>
+      <NavbarBrand href="/">Mbali Health</NavbarBrand>
+      <NavbarToggler onClick={toggle} />
+      <Collapse isOpen={isOpen} navbar>
+        <Nav className="ml-auto" navbar>
+          {/* <NavItem>
+            <NavLink href="/">Settings</NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink href="/">Notifications</NavLink>
+          </NavItem> */}
+          <NavItem>
+            <NavLink href="#">John Smith</NavLink>
+          </NavItem>
+          {/* <UncontrolledDropdown nav inNavbar>
           <DropdownToggle nav caret>
             John Smith
           </DropdownToggle>
@@ -45,10 +48,10 @@ const NavBar = () => {
               Reset
             </DropdownItem>
           </DropdownMenu>
-        </UncontrolledDropdown>
-      </Nav>
-    </Collapse>
-  </Navbar>
+        </UncontrolledDropdown> */}
+        </Nav>
+      </Collapse>
+    </Navbar>
   );
 };
 

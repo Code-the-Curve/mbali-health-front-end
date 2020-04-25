@@ -18,6 +18,7 @@ import IconButton from '@material-ui/core/IconButton/IconButton';
 
 import { calendarStringsHeader } from '../../../utils/time';
 import PhotoSmall from '../../molecules/PhotoSmall';
+import styled from 'styled-components';
 
 const styles = {
   icon: {
@@ -33,6 +34,70 @@ const styles = {
     height: 35,
   },
 };
+
+const Heading = styled.div`
+  background: #fff;
+  padding: 7px 10px 7px 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  z-index: 1;
+  top: 0;
+  height: 50px;
+  width: 100%;
+  cursor: default;
+`;
+const UserName = styled.div`
+  flex: 2;
+  font-size: 14px;
+  margin-left: 10px;
+  margin-top: 3px;
+  font-weight: 600;
+  color: #43444f;
+`;
+const ActiveTime = styled.p`
+  font-size: 12px;
+  font-weight: 500;
+  margin-top: 1px;
+  color: #8a8d91;
+`;
+const TextSearch = styled.div`
+  margin-right: 0;
+  flex: 1;
+  position: relative;
+
+  & input {
+    background: #fff;
+    padding: 8px;
+    border: 1px solid #eee;
+    width: 100%;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #666;
+    padding-left: 33px;
+
+    &::placeholder {
+      color: #aaa;
+    }
+  }
+`;
+const StyledSearchIcon = styled(Search)`
+  position: absolute;
+  color: #aaa;
+  left: 10px;
+  top: 9px;
+  font-size: 17px;
+`;
+const ClearSearch = styled(Close)`
+  position: absolute;
+  color: #aaa;
+  right: 10px;
+  top: 9px;
+  font-size: 17px;
+  cursor: pointer;
+  &:hover {
+    color: #888;
+  }
+`;
 
 const MessageHeading = ({ classes }) => {
   const [search, setSearch] = useState('');
@@ -61,35 +126,29 @@ const MessageHeading = ({ classes }) => {
   };
 
   return (
-    <div className="heading">
+    <Heading>
       <PhotoSmall />
-
-      <div className="name">
-        Name
-        <p className="activeAt">
+      <UserName>
+        Mathias Angule
+        <ActiveTime>
           <Moment
             calendar={calendarStringsHeader}
             date="March 8, 2020 at 1:00 PM"
           />
-        </p>
-      </div>
+        </ActiveTime>
+      </UserName>
 
-      <div id="textSearch" className="search __dark">
-        <Search className="searchIcon" />
+      <TextSearch>
+        <StyledSearchIcon />
         <input
-          className="searchInput"
           type="text"
           value={search}
           onKeyUp={onKeyUp}
           onChange={changeSearch}
           placeholder="Search in messages"
         />
-        {search.length > 0 ? (
-          <Close className="clearIcon" onClick={clearSearch} />
-        ) : (
-          ''
-        )}
-      </div>
+        {search.length > 0 ? <ClearSearch onClick={clearSearch} /> : ''}
+      </TextSearch>
 
       <IconButton
         id="profileInfo"
@@ -144,7 +203,7 @@ const MessageHeading = ({ classes }) => {
           />
         </MenuItem>
       </Menu>
-    </div>
+    </Heading>
   );
 };
 
