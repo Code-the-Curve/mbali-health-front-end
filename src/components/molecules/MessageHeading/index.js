@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import Moment from 'react-moment';
-
+import styled from 'styled-components';
 import { withStyles } from '@material-ui/core/styles';
 import Search from '@material-ui/icons/Search';
 import Close from '@material-ui/icons/Close';
-
 import Tune from '@material-ui/icons/Tune';
 import Help from '@material-ui/icons/Help';
 import ExitToApp from '@material-ui/icons/ExitToApp';
@@ -18,7 +17,6 @@ import IconButton from '@material-ui/core/IconButton/IconButton';
 
 import { calendarStringsHeader } from '../../../utils/time';
 import PhotoSmall from '../../molecules/PhotoSmall';
-import styled from 'styled-components';
 
 const styles = {
   icon: {
@@ -27,6 +25,7 @@ const styles = {
   button: {
     margin: 0,
     padding: 5,
+    outline: null,
   },
   avatar: {
     margin: 0,
@@ -74,6 +73,7 @@ const TextSearch = styled.div`
     font-size: 14px;
     color: #666;
     padding-left: 33px;
+    outline: none;
 
     &::placeholder {
       color: #aaa;

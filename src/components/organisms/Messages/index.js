@@ -1,7 +1,7 @@
 import React from 'react';
 
 // import Message from '../../molecules/Message';
-// import Write from '../../molecules/Write';
+import WriteMessage from '../../molecules/WriteMessage';
 import MessageHeading from '../../molecules/MessageHeading';
 import styled from 'styled-components';
 
@@ -20,7 +20,7 @@ const Messages = () => {
         Messages here
         <div id="messagesFooter" />
       </div>
-      {/* <Write /> */}
+      <WriteMessage />
     </MessageContainer>
   );
 };
