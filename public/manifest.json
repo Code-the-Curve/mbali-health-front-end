@@ -1,8 +1,7 @@
 {
-  "short_name": "WhatsApp Web App",
-  "name": "A clone for whatsaap web applicatino",
-  "icons": [
-    {
+  "short_name": "Mbali Health",
+  "name": "Mbali Health Medical Consultation System",
+  "icons": [{
       "src": "favicon.ico",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
