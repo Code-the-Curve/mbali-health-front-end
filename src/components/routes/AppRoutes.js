@@ -13,6 +13,9 @@ const SignUpForm = lazy(() =>
 const ChatsScreen = lazy(() =>
   import(/* webpackChunkName: "chatsScreen" */ '../pages/ChatsScreen')
 );
+const Consultation = lazy(() =>
+  import(/* webpackChunkName: "consultations" */ '../pages/Consultation')
+);
 const ChatRoom = lazy(() =>
   import(/* webpackChunkName: "chatRoom" */ '../pages/ChatRoom')
 );
@@ -43,6 +46,11 @@ const AppRoutes = () => (
     <Route path="/chats" exact>
       <Suspense fallback={<LoadingPage />}>
         <ChatsScreen />
+      </Suspense>
+    </Route>
+    <Route path="/consultation" exact>
+      <Suspense fallback={<LoadingPage />}>
+        <Consultation />
       </Suspense>
     </Route>
     <Route path="/chats/chat-room" exact>
