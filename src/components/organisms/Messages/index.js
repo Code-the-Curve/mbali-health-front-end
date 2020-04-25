@@ -1,7 +1,7 @@
 import React from 'react';
 
-import Message from './Message';
-import Write from './Write';
+// import Message from '../../molecules/Message';
+// import Write from '../../molecules/Write';
 import MessageHeading from '../../molecules/MessageHeading';
 import styled from 'styled-components';
 
@@ -16,10 +16,11 @@ const Messages = () => {
     <MessageContainer>
       <MessageHeading />
       <div id="messages">
-        <Message />
+        {/* <Message /> */}
+        Messages here
         <div id="messagesFooter" />
       </div>
-      <Write />
+      {/* <Write /> */}
     </MessageContainer>
   );
 };

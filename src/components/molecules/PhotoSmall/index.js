@@ -13,7 +13,7 @@ const styles = {
   },
 };
 
-const PhotoSmall = () => {
+const PhotoSmall = ({ classes }) => {
   return (
     <div className={classes.profilePhoto}>
       <Avatar

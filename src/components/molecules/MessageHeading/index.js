@@ -17,7 +17,7 @@ import AccountCircle from '@material-ui/icons/AccountCircle';
 import IconButton from '@material-ui/core/IconButton/IconButton';
 
 import { calendarStringsHeader } from '../../../utils/time';
-import PhotoSmall from '../User/PhotoSmall';
+import PhotoSmall from '../../molecules/PhotoSmall';
 
 const styles = {
   icon: {
@@ -34,29 +34,29 @@ const styles = {
   },
 };
 
-const MessageHeading = () => {
+const MessageHeading = ({ classes }) => {
   const [search, setSearch] = useState('');
   const [anchorEl, setAnchorEl] = useState(null);
 
-  closeMenu = () => {
+  const closeMenu = () => {
     setAnchorEl(null);
   };
 
-  showMenu = (event) => {
+  const showMenu = (event) => {
     setAnchorEl(event.currentTarget);
   };
 
-  clearSearch = () => {
+  const clearSearch = () => {
     setSearch('');
   };
 
-  onKeyUp = (event) => {
+  const onKeyUp = (event) => {
     if (event.key === 'Escape') {
       setSearch('');
     }
   };
 
-  changeSearch = (event) => {
+  const changeSearch = (event) => {
     setSearch(event.target.value);
   };
 
@@ -148,4 +148,4 @@ const MessageHeading = () => {
   );
 };
 
-export default withStyles(styles)(MessageHeading));
+export default withStyles(styles)(MessageHeading);
