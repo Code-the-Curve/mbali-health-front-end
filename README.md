@@ -1,4 +1,4 @@
-# WhatsApp Web clone
+# Mbali Health FrontEnd
 
 Clone the project.
 
