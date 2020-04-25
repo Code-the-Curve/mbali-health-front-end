@@ -10,18 +10,16 @@ import ClickAwayListener from '@material-ui/core/ClickAwayListener';
 import Paper from '@material-ui/core/Paper';
 import Face from '@material-ui/icons/Face';
 
-const styles = (theme) => ({
+const styles = {
   button: {
-    margin: theme.spacing.unit,
+    margin: 2,
   },
-});
+};
 const WriteMessageContainer = styled.div`
-  background: #fff;
-  padding: 15px;
   position: fixed;
   bottom: 0;
   right: 0;
-  width: 100%;
+  width: calc(100% - 351px);
 `;
 const WriteMessage = styled.div`
   margin: 0 10px 10px 49px;
@@ -45,7 +43,7 @@ const SendButton = styled(IconButton)`
   right: 0;
   z-index: 1;
 `;
-const StyledTextarea = styled(Textarea)`
+const StyledTextArea = styled(Textarea)`
   width: 100%;
   box-sizing: border-box;
   border: none;
@@ -57,6 +55,7 @@ const StyledTextarea = styled(Textarea)`
   height: auto;
   font-size: 16px;
   padding: 20px;
+  outline: none;
 `;
 
 const Write = ({ classes, text }) => {
@@ -93,12 +92,12 @@ const Write = ({ classes, text }) => {
               component="span"
             >
               <Face />
+              {emojiOpened ? (
+                <Paper id="emojis">
+                  <Picker onClick={emojiClick} />
+                </Paper>
+              ) : null}
             </EmojiButton>
-            {emojiOpened ? (
-              <Paper id="emojis">
-                <Picker onClick={emojiClick} />
-              </Paper>
-            ) : null}
           </div>
         </ClickAwayListener>
         <UploadEmoji
@@ -116,7 +115,7 @@ const Write = ({ classes, text }) => {
         >
           <Send />
         </SendButton>
-        <Textarea
+        <StyledTextArea
           value={text}
           placeholder="Write a message..."
           onKeyPress={onKeyPress}
