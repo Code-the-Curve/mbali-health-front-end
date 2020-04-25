@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 import Moment from 'react-moment';
-import { connect } from 'react-redux';
 
 import { withStyles } from '@material-ui/core/styles';
 import Search from '@material-ui/icons/Search';
@@ -19,7 +17,6 @@ import AccountCircle from '@material-ui/icons/AccountCircle';
 import IconButton from '@material-ui/core/IconButton/IconButton';
 
 import { calendarStringsHeader } from '../../../utils/time';
-import route from '../../config/route';
 import PhotoSmall from '../User/PhotoSmall';
 
 const styles = {
@@ -151,4 +148,4 @@ const MessageHeading = () => {
   );
 };
 
-export default withStyles(styles)(Heading));
+export default withStyles(styles)(MessageHeading));

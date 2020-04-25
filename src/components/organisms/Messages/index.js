@@ -2,7 +2,7 @@ import React from 'react';
 
 import Message from './Message';
 import Write from './Write';
-import Heading from './Heading';
+import MessageHeading from '../../molecules/MessageHeading';
 import styled from 'styled-components';
 
 const MessageContainer = styled.section`
@@ -14,7 +14,7 @@ const MessageContainer = styled.section`
 const Messages = () => {
   return (
     <MessageContainer>
-      <Heading />
+      <MessageHeading />
       <div id="messages">
         <Message />
         <div id="messagesFooter" />
