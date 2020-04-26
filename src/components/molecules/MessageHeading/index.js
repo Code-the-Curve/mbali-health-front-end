@@ -131,10 +131,7 @@ const MessageHeading = ({ classes }) => {
       <UserName>
         Mathias Angule
         <ActiveTime>
-          <Moment
-            calendar={calendarStringsHeader}
-            date="March 8, 2020 at 1:00 PM"
-          />
+          <Moment calendar={calendarStringsHeader} date="04-23-2020" />
         </ActiveTime>
       </UserName>
 
