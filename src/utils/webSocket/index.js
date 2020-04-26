@@ -17,9 +17,9 @@ const WebsocketUtil = {
 
   send: (socket, room, message) => {
     console.log(`Sending ${message}`);
-    socket.emit('message', {
-      room,
-      message,
+    socket.emit('message', { 
+      room, 
+      content: { message },
       sent_ts: new Date(),
       from: PRACTIONER_ID, // TODO: Change Hardcode
     });

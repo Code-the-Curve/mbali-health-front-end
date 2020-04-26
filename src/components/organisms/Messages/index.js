@@ -35,7 +35,7 @@ const Messages = ({ messages, room, onMessageSubmit }) => {
             return (
               <SentMessage
                 key={id}
-                message={message.message}
+                message={message.content.message}
                 date={message.sent_ts}
               />
             );
@@ -44,7 +44,7 @@ const Messages = ({ messages, room, onMessageSubmit }) => {
               <Message
                 key={id}
                 imageUrl={imgUrl}
-                message={message.message}
+                message={message.content.message}
                 date={message.date}
               />
             );
