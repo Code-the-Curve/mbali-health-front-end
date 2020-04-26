@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import DefaultLayout from '../../templates/DefaultLayout';
 import {
   TabContent,
@@ -13,11 +13,11 @@ import {
 } from 'reactstrap';
 import classnames from 'classnames';
 
-import ChatNavbar from '../../molecules/ChatNavbar';
-import MessageInput from '../../molecules/MessageInput';
-import MessagesList from '../../organisms/MessagesList';
+// import ChatNavbar from '../../molecules/ChatNavbar';
+// import MessageInput from '../../molecules/MessageInput';
+// import MessagesList from '../../organisms/MessagesList';
 import websockets from '../../../utils/webSocket';
-import usePrevious from '../../../hooks/usePrevious';
+// import usePrevious from '../../../hooks/usePrevious';
 
 const ChatRoom = () => {
   const [activeTab, setActiveTab] = useState('1');
