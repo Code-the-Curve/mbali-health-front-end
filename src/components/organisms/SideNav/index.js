@@ -2,7 +2,7 @@ import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
 
 // import Rooms from './Room/Rooms';
-// import Heading from './Room/Heading';
+import SideNavHeading from '../../molecules/SideNavHeading';
 
 const styles = (theme) => ({
   sideNav: {
@@ -35,10 +35,8 @@ const styles = (theme) => ({
 const SideNav = ({ classes }) => {
   return (
     <aside className={classes.sideNav}>
-      side nav here
-      {/*       
-      <Heading />
-      <Rooms /> */}
+      <SideNavHeading />
+      {/* <Rooms /> */}
     </aside>
   );
 };

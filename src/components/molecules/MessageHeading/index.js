@@ -65,7 +65,7 @@ const TextSearch = styled.div`
   position: relative;
 
   & input {
-    background: #fff;
+    background: #f1f1f4;
     padding: 8px;
     border: 1px solid #eee;
     width: 100%;
