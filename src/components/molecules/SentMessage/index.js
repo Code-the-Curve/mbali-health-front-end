@@ -33,66 +33,18 @@ const MessageText = styled.div`
   border-bottom-right-radius: 2px;
 `;
 
-const SentMessage = () => {
+const SentMessage = ({message, date }) => {
   return (
-    <>
       <MessageWrapper>
         <MessageBody>
           <MessageStatus>
-            <Moment calendar={calendarStringsMessage} date="12-12-2019" />
+            <Moment calendar={calendarStringsMessage} date={date} />
           </MessageStatus>
           <MessageText>
-            This is a message I have sent to the patient This is a message I
-            have sent to the patient This is a message I have sent to the
-            patient This is a message I have sent to the patient This is a
-            message I have sent to the patient This is a message I have sent to
-            the patient This is a message I have sent to the patient This is a
-            message I have sent to the patient This is a message I have sent to
-            the patient
+            {message}
           </MessageText>
         </MessageBody>
       </MessageWrapper>
-      <MessageWrapper>
-        <MessageBody>
-          <MessageStatus>
-            <Moment calendar={calendarStringsMessage} date="12-12-2019" />
-          </MessageStatus>
-          <MessageText>😇☝</MessageText>
-        </MessageBody>
-      </MessageWrapper>
-      <MessageWrapper>
-        <MessageBody>
-          <MessageStatus>
-            <Moment calendar={calendarStringsMessage} date="04-19-2020" />
-          </MessageStatus>
-          <MessageText>
-            This is a message I have sent to the patient This is a message I
-            have sent to the patient This is a message I have sent to the
-            patient
-          </MessageText>
-        </MessageBody>
-      </MessageWrapper>
-      <MessageWrapper>
-        <MessageBody>
-          <MessageStatus>
-            <Moment calendar={calendarStringsMessage} date="04-25-2020" />
-          </MessageStatus>
-          <MessageText>This 💪🏾</MessageText>
-        </MessageBody>
-      </MessageWrapper>
-      <MessageWrapper>
-        <MessageBody>
-          <MessageStatus>
-            <Moment calendar={calendarStringsMessage} date="04-26-2020" />
-          </MessageStatus>
-          <MessageText>
-            This is a message I have sent to the patient This is a message I
-            have sent to the patient This is a message I have sent to the
-            patient
-          </MessageText>
-        </MessageBody>
-      </MessageWrapper>
-    </>
   );
 };
 

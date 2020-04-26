@@ -6,6 +6,8 @@ import MessageHeading from '../../molecules/MessageHeading';
 import SentMessage from '../../molecules/SentMessage';
 import WriteMessage from '../../molecules/WriteMessage';
 
+import { PRACTIONER_ID } from '../../../utils/Constants'
+
 const MessageContainer = styled.section`
   width: calc(100vw - 350px);
   background: #fff;
@@ -18,16 +20,28 @@ const MessagesBody = styled.div`
   overflow: scroll;
 `;
 
-const Messages = () => {
+const imgUrl = 'https://image.shutterstock.com/image-photo/german-shepherd-dog-on-forest-260nw-164440220.jpg';
+
+const Messages = ({messages, room, onMessageSubmit}) => {
   return (
     <MessageContainer>
       <MessageHeading />
       <MessagesBody>
-        <Message />
-        <SentMessage />
+        {(messages || []).map((message, id) => {
+          if (message.from === PRACTIONER_ID) { // TODO: Change Hardcode
+            return <SentMessage key={id}
+              message={message.message}
+              date={message.date}/>
+          } else {
+            return <Message key={id}
+              imageUrl={imgUrl}
+              message={message.message}
+              date={message.date} />
+          }
+        })}
         <div id="messagesFooter" />
       </MessagesBody>
-      <WriteMessage />
+      <WriteMessage onMessageSubmit={onMessageSubmit}/>
     </MessageContainer>
   );
 };

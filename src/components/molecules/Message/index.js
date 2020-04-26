@@ -45,42 +45,22 @@ const MessageBody = styled.div`
   border-bottom-left-radius: 2px;
 `;
 
-const Message = ({ classes }) => {
+const Message = ({ classes, imageUrl, message, date }) => {
   return (
-    <>
       <MessageItem>
         <Avatar
-          src="https://image.shutterstock.com/image-photo/german-shepherd-dog-on-forest-260nw-164440220.jpg"
+          src={imageUrl}
           className={classes.avatar}
         />
         <MessageDetails>
           <MessageBody>
-            This holds the message body of a text i have received This holds the
-            message body of a text i have received This holds the message body
-            of a text i have received This holds the message body of a text i
-            have received This holds the message body of a text i have received
-            This holds the message body of a text i have received
+            {message}
           </MessageBody>
           <MessageItemStatus>
-            <Moment calendar={calendarStringsMessage} date="12-03-2019" />
+            <Moment calendar={calendarStringsMessage} date={date} />
           </MessageItemStatus>
         </MessageDetails>
       </MessageItem>
-      <MessageItem>
-        <Avatar
-          src="https://image.shutterstock.com/image-photo/german-shepherd-dog-on-forest-260nw-164440220.jpg"
-          className={classes.avatar}
-        />
-        <MessageDetails>
-          <MessageBody>
-            This holds the message body of a text i have received
-          </MessageBody>
-          <MessageItemStatus>
-            <Moment calendar={calendarStringsMessage} date="04-20-2020" />
-          </MessageItemStatus>
-        </MessageDetails>
-      </MessageItem>
-    </>
   );
 };
 
