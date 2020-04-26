@@ -6,7 +6,7 @@ import MessageHeading from '../../molecules/MessageHeading';
 import SentMessage from '../../molecules/SentMessage';
 import WriteMessage from '../../molecules/WriteMessage';
 
-import { PRACTIONER_ID } from '../../../utils/Constants'
+import { PRACTIONER_ID } from '../../../utils/Constants';
 
 const MessageContainer = styled.section`
   width: calc(100vw - 350px);
@@ -20,28 +20,39 @@ const MessagesBody = styled.div`
   overflow: scroll;
 `;
 
-const imgUrl = 'https://image.shutterstock.com/image-photo/german-shepherd-dog-on-forest-260nw-164440220.jpg';
+const imgUrl =
+  'https://image.shutterstock.com/image-photo/german-shepherd-dog-on-forest-260nw-164440220.jpg';
 
-const Messages = ({messages, room, onMessageSubmit}) => {
+const Messages = ({ messages, room, onMessageSubmit }) => {
   return (
     <MessageContainer>
       <MessageHeading />
       <MessagesBody>
         {(messages || []).map((message, id) => {
-          if (message.from === PRACTIONER_ID) { // TODO: Change Hardcode
-            return <SentMessage key={id}
-              message={message.message}
-              date={message.date}/>
+          console.log('message', message);
+          if (message.from === PRACTIONER_ID) {
+            // TODO: Change Hardcode
+            return (
+              <SentMessage
+                key={id}
+                message={message.message}
+                date={message.date}
+              />
+            );
           } else {
-            return <Message key={id}
-              imageUrl={imgUrl}
-              message={message.message}
-              date={message.date} />
+            return (
+              <Message
+                key={id}
+                imageUrl={imgUrl}
+                message={message.message}
+                date={message.date}
+              />
+            );
           }
         })}
         <div id="messagesFooter" />
       </MessagesBody>
-      <WriteMessage onMessageSubmit={onMessageSubmit}/>
+      <WriteMessage onMessageSubmit={onMessageSubmit} />
     </MessageContainer>
   );
 };
