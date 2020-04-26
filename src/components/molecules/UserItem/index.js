@@ -1,23 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 import Moment from 'react-moment';
-import { withStyles } from '@material-ui/core/styles';
 import ListItem from '@material-ui/core/ListItem/ListItem';
 
 import { calendarStringsUsers } from '../../../utils/time';
 import Photo from '../../molecules/Photo';
 
-const styles = {
-  icon: {
-    fontSize: 14,
-    margin: 0,
-  },
-  avatar: {
-    margin: 0,
-    width: 60,
-    height: 60,
-  },
-};
 const User = styled(ListItem)`
   padding: 10px;
 `;
@@ -61,4 +49,4 @@ const UserItem = () => {
   );
 };
 
-export default withStyles(styles)(UserItem);
+export default UserItem;
