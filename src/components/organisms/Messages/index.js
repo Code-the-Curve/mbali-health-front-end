@@ -36,7 +36,7 @@ const Messages = ({ messages, room, onMessageSubmit }) => {
               <SentMessage
                 key={id}
                 message={message.message}
-                date={message.date}
+                date={message.sent_ts}
               />
             );
           } else {
