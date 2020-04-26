@@ -1,28 +1,28 @@
 import io from 'socket.io-client';
 
-const BACKEND_URL = 'http://api.mbalihealth.com/';
+import { PRACTIONER_ID } from '../Constants.js'
 
-var room = '';
+const BACKEND_URL = 'localhost:8081';
 
 const WebsocketUtil = {
   getSocket: () => {
-    return io.connect(BACKEND_URL);
+    const socket = io.connect(BACKEND_URL);
+    socket.emit('join', { uid: PRACTIONER_ID }) // TODO: Change Hardcode
+    return socket ;
   },
 
-  join: (socket, chatroomName, cb) => {
-    socket.emit('join', chatroomName, (res) => {
-      room = res.room;
-      cb(res);
-    });
-  },
-
-  leave: (socket, cb) => {
+  leave: (socket, room, cb) => {
     socket.emit('leave', room, cb);
   },
 
-  send: (socket, msg) => {
-    console.log(`Sending ${msg}`);
-    socket.emit('message', { room, message: msg });
+  send: (socket, room, message) => {
+    console.log(`Sending ${message}`);
+    socket.emit('message', { 
+      room, 
+      message,
+      sent_ts: new Date(),
+      from: PRACTIONER_ID, // TODO: Change Hardcode 
+    });
   },
 
   addMessageListener: (socket, cb) => {

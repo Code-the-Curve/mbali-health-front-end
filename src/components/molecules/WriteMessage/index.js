@@ -58,7 +58,7 @@ const StyledTextArea = styled(Textarea)`
   outline: none;
 `;
 
-const Write = ({ classes, text }) => {
+const Write = ({ classes, onMessageSubmit }) => {
   const [emojiOpened, setEmojiOpened] = useState(false);
 
   const showEmoji = () => {
@@ -71,13 +71,12 @@ const Write = ({ classes, text }) => {
     console.log('clicked', emoji);
   };
   const onKeyPress = (event) => {
-    if (event.key === 'Enter') {
+    const msg = event.target.value;
+    if (event.key === 'Enter' && msg !== '') {
       event.preventDefault();
-      console.log('event', event);
+      onMessageSubmit(msg);
+      event.target.value = '';
     }
-  };
-  const onChange = (event) => {
-    console.log('typing..', event.target.value);
   };
 
   return (
@@ -116,10 +115,8 @@ const Write = ({ classes, text }) => {
           <Send />
         </SendButton>
         <StyledTextArea
-          value={text}
           placeholder="Write a message..."
           onKeyPress={onKeyPress}
-          onChange={onChange}
         />
       </WriteMessage>
     </WriteMessageContainer>
